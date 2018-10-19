@@ -1,0 +1,15 @@
+Branches
+See all branches
+    git branch
+
+Create a branch on the local machine
+    git checkout -b [name of new branch]
+
+Change working branch
+    git checkout [name of branch to change to]
+
+Push the branch on github
+    git push origin [name of new branch]
+
+Delete a local branch
+    git branch -d [name of branch]
