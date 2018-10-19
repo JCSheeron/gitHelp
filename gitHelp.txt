@@ -1,8 +1,31 @@
+Initalize the current local direcotry as the local Git repository
+    git init
+
+Status
+    git status
+
+Add files to the local repository and stage for commit
+    git add . or use file name(s)
+
+Commit the staged (added) files
+    git commit  (an editor will open for the commit message)
+    git commit -m "Commit message"
+
+Link local repository with a remote Github repository
+        git remote add origin remoteRepositoryURL
+    where "origin" is ghCloud in my (most) cases.
+    verify the new remote URL
+        git remote -v
+    push the local repository to GitHub
+        git push remoteName branchName 
+        or
+        git push ghCloud master
+
 Branches
 See all branches
     git branch
 
-Create a branch on the local machine
+Create a branch on the local machine, and switch to it.
     git checkout -b [name of new branch]
 
 Change working branch
