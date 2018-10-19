@@ -17,7 +17,7 @@ Link local repository with a remote Github repository
     verify the new remote URL
         git remote -v
     push the local repository to GitHub
-        git push remoteName branchName 
+        git push <remote name> <branch name> 
         or
         git push ghCloud master
 
@@ -36,3 +36,6 @@ Push the branch on github
 
 Delete a local branch
     git branch -d [name of branch]
+
+Push last commit to the remote
+    git push <remote> <branch>
