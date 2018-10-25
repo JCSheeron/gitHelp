@@ -12,30 +12,48 @@ Commit the staged (added) files
     git commit -m "Commit message"
 
 Link local repository with a remote Github repository
-        git remote add origin remoteRepositoryURL
-    where "origin" is ghCloud in my (most) cases.
+        git remote add <origin> <remoteRepositoryURL>
+    where <origin> is "ghCloud" in my (most) cases.
+ 
     verify the new remote URL
         git remote -v
+    
     push the local repository to GitHub
-        git push <remote name> <branch name> 
-        or
-        git push ghCloud master
+        git push <origin> <branch name> 
+        where <origin> is "ghCloud" in my (most) cases.
 
 Branches
 See all branches
     git branch
 
 Create a branch on the local machine, and switch to it.
-    git checkout -b [name of new branch]
+    git checkout -b <name of new branch>
 
 Change working branch
-    git checkout [name of branch to change to]
+    git checkout <name of branch to change to>
 
 Push the branch on github
-    git push origin [name of new branch]
+    git push origin <name of new branch>
 
 Delete a local branch
-    git branch -d [name of branch]
+    git branch -d <name of branch>
 
 Push last commit to the remote
     git push <remote> <branch>
+
+Rename local and remote branch
+    Rename local branch
+        git branch -m <new-name>
+    or, if on a different branch
+        git branch -m <old name> <new name>
+
+    Delete the old remote branch and push the new local branch
+        git push <origin> :<old name> <new name>
+    where <origin> is "ghCloud" in my (most) cases.
+
+    Reset the upstream branch for the new local branch
+        git push <origin> -u <new name>
+    where <origin> is "ghCloud" in my (most) cases.
+
+
+
