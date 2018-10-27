@@ -12,15 +12,15 @@ Commit the staged (added) files
     git commit -m "Commit message"
 
 Link local repository with a remote Github repository
-        git remote add <origin> <remoteRepositoryURL>
-    where <origin> is "ghCloud" in my (most) cases.
+        git remote add <remote name> <remoteRepositoryURL>
+    where <remote name> is usually "origin" but is "ghCloud" in my (most) cases.
  
     verify the new remote URL
         git remote -v
     
     push the local repository to GitHub
-        git push <origin> <branch name> 
-        where <origin> is "ghCloud" in my (most) cases.
+        git push <remote name> <branch name> 
+        where <remote name> is usually "origin" but is "ghCloud" in my (most) cases.
 
 Branches
 See all branches
@@ -33,13 +33,22 @@ Change working branch
     git checkout <name of branch to change to>
 
 Push the branch on github
-    git push origin <name of new branch>
+    git push <remote name> <name of new branch>
+    where <remote name> is usually "origin" but is "ghCloud" in my (most) cases.
 
 Delete a local branch
     git branch -d <name of branch>
+        (-d only deletes if branch is fully merged in its upstream branch)
+    or
+    git branch -D <name of branch> to delete irrespective of its merged status
+
+Delete a remote branch
+    git push <remote name> --delete <branch name>  or :<branch name>
+    where <remote name> is usually "origin" but is "ghCloud" in my (most) cases.
 
 Push last commit to the remote
-    git push <remote> <branch>
+    git push <remote name> <branch>
+    where <remote name> is usually "origin" but is "ghCloud" in my (most) cases.
 
 Rename local and remote branch
     Rename local branch
@@ -48,12 +57,26 @@ Rename local and remote branch
         git branch -m <old name> <new name>
 
     Delete the old remote branch and push the new local branch
-        git push <origin> :<old name> <new name>
-    where <origin> is "ghCloud" in my (most) cases.
+        git push <remote name> :<old name> <new name>
+        where <remote name> is usually "origin" but is "ghCloud" in my (most) cases.
 
     Reset the upstream branch for the new local branch
-        git push <origin> -u <new name>
-    where <origin> is "ghCloud" in my (most) cases.
+        git push <remote name> -u <new name>
+        where <remote name> is usually "origin" but is "ghCloud" in my (most) cases.
 
+Merging
+    1) Use fast forward merge when there is a linear relationship between
+    master and new branch
+    2) Switch to master branch
+        git checkout master
+    3) Merge new branch
+        git merge <branch name>
+
+Tags
+    annotated tag (recommended)
+        git tag -a <tag name> -m "message"
+            leave off -m and "message" to type message into an editor
+    lightweight tag (no info is kept, it is just a named commit checksum stored in a file)
+        git tag <tag name>
 
 
