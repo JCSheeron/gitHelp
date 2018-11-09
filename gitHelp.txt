@@ -32,9 +32,15 @@ Create a branch on the local machine, and switch to it.
 Change working branch
     git checkout <name of branch to change to>
 
-Push the branch on github
-    git push <remote name> <name of new branch>
+Push the branch on github git push <remote name> <name of new branch>
     where <remote name> is usually "origin" but is "ghCloud" in my (most) cases.
+
+    the first time, use
+    git push --set-upstream <remote name> <name of new branch> 
+    where <remote name> is usually "origin" but is "ghCloud" in my (most) cases.
+
+    once the --set-upstream option is used, the command can be shortened to
+    git push <remote name>
 
 Delete a local branch
     git branch -d <name of branch>
