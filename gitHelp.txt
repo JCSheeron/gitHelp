@@ -19,7 +19,11 @@ Link local repository with a remote Github repository
         git remote -v
     
     push the local repository to GitHub
-        git push <remote name> <branch name> 
+        first time
+            git push --set-upstream <remote name> <branch name>
+          
+        after the upstream is set
+            git push <remote name> <branch name> 
         where <remote name> is usually "origin" but is "ghCloud" in my (most) cases.
 
 Branches
