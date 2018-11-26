@@ -25,6 +25,12 @@ Link local repository with a remote Github repository
         after the upstream is set
             git push <remote name> <branch name> 
         where <remote name> is usually "origin" but is "ghCloud" in my (most) cases.
+        
+    remove a remote
+        git remote rm <remote name>
+        where <remote name> is usually "origin" but is "ghCloud" in my (most) cases
+        This does not remove the remote repository, but removes the remote from the local repository.
+        
 
 Branches
 See all branches
